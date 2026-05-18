@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Lingap Foundation | Bridging Hope Through Education</title>
+  <meta name="description" content="Team Lingap Foundation donation website for school children outreach programs in Alabang, Muntinlupa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;color:#1b1b1b;background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .topbar{background:#7b1113;color:#fff;font-size:14px;padding:10px 6%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .navbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.08);padding:16px 6%;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:#7b1113;font-size:20px;letter-spacing:.3px}
+    .brand-mark{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#7b1113,#d6a21d);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 10px 25px rgba(123,17,19,.25)}
+    .logo-img{width:54px;height:54px;object-fit:contain;border-radius:12px;background:#fff}
+    .navlinks{display:flex;gap:26px;align-items:center;font-weight:600;font-size:14px;color:#333}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;font-weight:800;border:0;cursor:pointer;transition:.25s ease}
+    .btn-primary{background:#7b1113;color:#fff;box-shadow:0 12px 25px rgba(123,17,19,.25)}
+    .btn-primary:hover{transform:translateY(-2px);background:#5f0d0f}
+    .btn-outline{border:2px solid #fff;color:#fff}
+    .btn-outline:hover{background:#fff;color:#7b1113}
+    .hero{min-height:88vh;background:linear-gradient(120deg,rgba(67,5,8,.88),rgba(123,17,19,.78)),url('assets/outreach-hero.jpg') center/cover;display:grid;align-items:center;padding:80px 6%;color:#fff}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;max-width:1200px;margin:auto;width:100%}
+    .badge{display:inline-flex;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:8px 14px;border-radius:999px;font-weight:700;margin-bottom:20px}
+    .hero h1{font-size:clamp(38px,6vw,72px);line-height:1.02;margin-bottom:22px;letter-spacing:-2px}
+    .hero p{font-size:18px;max-width:680px;color:#f7eeee;margin-bottom:30px}
+    .hero-actions{display:flex;gap:15px;flex-wrap:wrap}
+    .donation-card{background:#fff;color:#1b1b1b;border-radius:28px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+    .donation-card h3{font-size:26px;color:#7b1113;margin-bottom:8px}
+    .donation-card p{color:#555;margin-bottom:20px;font-size:15px}
+    .amounts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
+    .amount{padding:14px;border:1px solid #ead7d8;border-radius:14px;text-align:center;font-weight:800;background:#fff7f7;color:#7b1113}
+    .bankbox{background:#f8f4ed;border-left:5px solid #d6a21d;border-radius:16px;padding:18px;margin-top:18px;font-size:14px}
+    .section{padding:90px 6%}
+    .container{max-width:1200px;margin:auto}
+    .section-title{text-align:center;margin-bottom:45px}
+    .section-title span{color:#7b1113;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:13px}
+    .section-title h2{font-size:clamp(30px,4vw,48px);line-height:1.1;margin:10px 0;color:#202020}
+    .section-title p{max-width:760px;margin:auto;color:#666}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{background:#fff;border:1px solid #f0e5e5;border-radius:24px;padding:28px;box-shadow:0 15px 40px rgba(0,0,0,.06)}
+    .icon{width:54px;height:54px;border-radius:18px;background:#fff0f0;display:grid;place-items:center;font-size:26px;margin-bottom:18px}
+    .card h3{font-size:21px;color:#7b1113;margin-bottom:10px}
+    .card p,.card li{color:#5b5b5b;font-size:15px}
+    .impact{background:#faf7f2}
+    .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .impact-box{background:#fff;padding:28px;border-radius:24px;text-align:center;border-bottom:5px solid #7b1113;box-shadow:0 12px 35px rgba(0,0,0,.06)}
+    .impact-box strong{font-size:36px;color:#7b1113;display:block}
+    .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .tier{border-radius:24px;padding:26px;background:#fff;border:1px solid #eee;box-shadow:0 14px 35px rgba(0,0,0,.06);position:relative;overflow:hidden}
+    .tier:before{content:"";position:absolute;top:0;left:0;width:100%;height:7px;background:#7b1113}
+    .tier.featured{transform:translateY(-10px);border:2px solid #d6a21d}
+    .tier h3{font-size:22px;margin-bottom:8px;color:#7b1113}
+    .price{font-size:20px;font-weight:900;margin-bottom:18px;color:#222}
+    .tier ul{padding-left:18px;margin:18px 0;color:#555;font-size:14px}
+    .tier li{margin-bottom:8px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+    .photo-card{border-radius:30px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.18)}
+    .about h2{font-size:42px;line-height:1.12;margin-bottom:18px;color:#7b1113}
+    .about p{color:#555;margin-bottom:15px}
+    .cta{background:linear-gradient(120deg,#7b1113,#a3191d);color:#fff;text-align:center;border-radius:36px;padding:60px 30px;box-shadow:0 20px 60px rgba(123,17,19,.25)}
+    .cta h2{font-size:42px;line-height:1.1;margin-bottom:15px}
+    .cta p{max-width:760px;margin:0 auto 28px;color:#fff1f1}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-box{background:#fff;border-radius:24px;padding:30px;border:1px solid #eee;box-shadow:0 12px 35px rgba(0,0,0,.06)}
+    .contact-box h3{color:#7b1113;margin-bottom:12px}
+    .footer{background:#1b1b1b;color:#ddd;padding:45px 6%;text-align:center}
+    .footer strong{color:#fff}
+    .footer p{margin-top:8px;color:#aaa;font-size:14px}
+    @media(max-width:950px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.cards,.tiers{grid-template-columns:1fr 1fr}.impact-grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.hero{padding-top:60px}.donation-card{max-width:560px}}
+    @media(max-width:600px){.cards,.tiers,.impact-grid,.amounts{grid-template-columns:1fr}.topbar{font-size:12px}.navbar{padding:14px 5%}.section{padding:65px 5%}.hero{padding:65px 5%}.hero-actions{flex-direction:column}.btn{width:100%}.tier.featured{transform:none}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div>LINGAP FOUNDATION • Alabang, Muntinlupa</div>
+    <div>Community Outreach & Partnerships Team</div>
+  </div>
+
+  <nav class="navbar">
+    <a href="#home" class="brand"><img src="assets/lingap-logo.png" alt="Team Lingap Foundation Logo" class="logo-img"><span>Team Lingap Foundation</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#impact">Impact</a>
+      <a href="#sponsor">Sponsorship</a>
+      <a href="#contact">Contact</a>
+      <a href="#donate" class="btn btn-primary">Donate Now</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-grid">
+      <div>
+        <div class="badge">Bridging Hope Through Education</div>
+        <h1>Help a child begin the school year with dignity and hope.</h1>
+        <p>Team Lingap Foundation supports school children in underserved communities by providing school supplies, learning materials, hygiene kits, and educational support before the opening of classes.</p>
+        <div class="hero-actions">
+          <a href="#donate" class="btn btn-primary">Make a Donation</a>
+          <a href="#sponsor" class="btn btn-outline">View Sponsorship Packages</a>
+          <a href="assets/TEAM-LINGAP-PRIMER.pdf" target="_blank" class="btn btn-outline">View About Us Primer</a>
+        </div>
+      </div>
+      <div class="donation-card" id="donate">
+        <h3>Give Today</h3>
+        <p>Your contribution helps provide educational kits, bags, notebooks, writing materials, hygiene supplies, and other learning essentials.</p>
+        <div class="amounts">
+          <div class="amount">₱500</div>
+          <div class="amount">₱1,000</div>
+          <div class="amount">₱2,500</div>
+          <div class="amount">Any Amount</div>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="width:100%">Contact Us to Donate</a>
+        <div class="bankbox">
+          <strong>Donation details:</strong><br>
+          Add your GCash, bank account, QR code, or official donation form link here before publishing.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="photo-card">
+        <img src="assets/team-lingap-outreach.jpg" alt="Team Lingap outreach activity">
+      </div>
+      <div>
+        <span style="color:#7b1113;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:13px">About the Program</span>
+        <h2>Education support for children who need it most.</h2>
+        <p>Education is one of the strongest foundations for a child’s future. Through this outreach program, Lingap Foundation aims to equip underprivileged school children in Alabang, Muntinlupa with essential school supplies and learning support.</p>
+        <p>The initiative also brings together businesses, organizations, and compassionate individuals who believe that every child deserves the opportunity to learn, dream, and succeed.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <a href="#sponsor" class="btn btn-primary">Become a Sponsor</a>
+          <a href="assets/TEAM-LINGAP-PRIMER.pdf" target="_blank" class="btn" style="border:2px solid #7b1113;color:#7b1113;background:#fff">View Lingap Primer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span>About Us Primer</span>
+        <h2>Know more about Team Lingap</h2>
+        <p>Visitors may view the Lingap Primer to learn about the history, mission, values, members, activities, and development plan of Team Lingap.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="icon">📘</div><h3>Team Identity</h3><p>Includes the brief history, logo meaning, rationale, objectives, vision, mission, and core values.</p></div>
+        <div class="card"><div class="icon">🤲</div><h3>Programs & Activities</h3><p>Shows outreach programs, parish involvement, institutional support, and community-based activities.</p></div>
+        <div class="card"><div class="icon">🔗</div><h3>Open the Primer</h3><p>Upload the PDF inside the assets folder, then use the button below to let visitors view it.</p><br><a href="assets/TEAM-LINGAP-PRIMER.pdf" target="_blank" class="btn btn-primary">View Lingap Primer</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section impact" id="impact">
+    <div class="container">
+      <div class="section-title">
+        <span>Our Target Impact</span>
+        <h2>Reaching 500+ school children</h2>
+        <p>Every donation becomes part of a practical educational support kit for children from underserved communities in Alabang, Muntinlupa.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-box"><strong>500+</strong><span>Target Beneficiaries</span></div>
+        <div class="impact-box"><strong>300–400</strong><span>Children supported by Platinum Sponsor</span></div>
+        <div class="impact-box"><strong>180–250</strong><span>Children supported by Gold Sponsor</span></div>
+        <div class="impact-box"><strong>30–150</strong><span>Children supported by Silver/Bronze Sponsors</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span>Program Activities</span>
+        <h2>More than giving supplies</h2>
+        <p>The outreach program combines material support, encouragement, and meaningful community engagement.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="icon">🎒</div><h3>School Supply Distribution</h3><p>Bags, notebooks, paper supplies, pencils, uniforms, shoes, art materials, and hygiene kits.</p></div>
+        <div class="card"><div class="icon">🍽️</div><h3>Feeding Program</h3><p>Snacks, bottled water, and meals may be provided to support the children during the outreach activity.</p></div>
+        <div class="card"><div class="icon">🌟</div><h3>Inspirational Activities</h3><p>Talks, games, volunteer engagement, and educational activities designed to uplift and encourage children.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sponsor">
+    <div class="container">
+      <div class="section-title">
+        <span>Sponsorship Packages</span>
+        <h2>Partner with a purpose-driven outreach program</h2>
+        <p>Sponsors receive community exposure, brand visibility, formal acknowledgment, and documentation of their contribution.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier featured">
+          <h3>Platinum</h3>
+          <div class="price">₱250,000+</div>
+          <p>Complete educational kits for approximately 300–400 children.</p>
+          <ul><li>Presenting Sponsor recognition</li><li>Largest logo placement</li><li>Backdrop, banners, and school kits</li><li>Company message opportunity</li><li>Plaque and certificate</li></ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%">Inquire</a>
+        </div>
+        <div class="tier">
+          <h3>Gold</h3>
+          <div class="price">₱150,000–₱249,999</div>
+          <p>School supplies for approximately 180–250 children.</p>
+          <ul><li>Prominent logo placement</li><li>Event recognition</li><li>Sponsor spotlight</li><li>Promo table opportunity</li><li>Certificate</li></ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%">Inquire</a>
+        </div>
+        <div class="tier">
+          <h3>Silver</h3>
+          <div class="price">₱75,000–₱149,999</div>
+          <p>Educational materials for approximately 80–150 children.</p>
+          <ul><li>Logo on tarpaulins</li><li>Digital material inclusion</li><li>Sponsor acknowledgment</li><li>Social media recognition</li><li>Certificate</li></ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%">Inquire</a>
+        </div>
+        <div class="tier">
+          <h3>Bronze</h3>
+          <div class="price">₱25,000–₱74,999</div>
+          <p>Basic school supply assistance for approximately 30–70 children.</p>
+          <ul><li>Name/logo inclusion</li><li>Group acknowledgment</li><li>Social media thank-you</li><li>Certificate</li><li>Community documentation</li></ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%">Inquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section impact">
+    <div class="container">
+      <div class="section-title">
+        <span>In-Kind Donations</span>
+        <h2>We also welcome goods and services</h2>
+        <p>In-kind sponsors will receive recognition equivalent to the assessed sponsorship value.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="icon">✏️</div><h3>Learning Materials</h3><p>Notebooks, paper supplies, writing materials, art materials, school bags, uniforms, and shoes.</p></div>
+        <div class="card"><div class="icon">🧼</div><h3>Care Kits</h3><p>Hygiene kits, snacks, bottled water, and other child-friendly support items.</p></div>
+        <div class="card"><div class="icon">🤝</div><h3>Event Support</h3><p>Printing services, logistics support, venue assistance, documentation, and volunteer support.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta">
+        <h2>Small acts of kindness can create lifelong impact.</h2>
+        <p>Together, we can help children begin the school year with confidence, dignity, and hope. Become a donor, sponsor, or community partner today.</p>
+        <a href="mailto:teamlingap@example.com" class="btn" style="background:#fff;color:#7b1113">Email Us</a>
+      </div>
+      <div class="contact-grid" style="margin-top:28px">
+        <div class="contact-box">
+          <h3>For Sponsorship Inquiries</h3>
+          <p><strong>LINGAP FOUNDATION</strong><br>Community Outreach & Partnerships Team<br>Alabang, Muntinlupa City</p>
+        </div>
+        <div class="contact-box">
+          <h3>Before Publishing</h3>
+          <p>Replace the sample email, add your official contact number, donation QR code, social media links, SEC/registration details if available, and official address for stronger credibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <strong>Team Lingap Foundation</strong>
+    <p>Bridging Hope Through Education • Alabang Community Outreach</p>
+    <p>© 2026 Team Lingap Foundation. All rights reserved.</p>
+  </footer>
+</body>
+</html>
