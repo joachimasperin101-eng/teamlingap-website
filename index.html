@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Team Lingap | Bridging Hope Through Education</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,413 +13,510 @@
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Inter,sans-serif;
-  background:#fff;
-  color:#222;
-  line-height:1.6;
+font-family:Inter,sans-serif;
+background:#fff;
+color:#222;
+line-height:1.6;
+overflow-x:hidden;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 img{
-  max-width:100%;
-  display:block;
+max-width:100%;
+display:block;
 }
-
-/* TOP BAR */
 
 .topbar{
-  background:#7b1113;
-  color:#fff;
-  padding:5px 5%;
-  display:flex;
-  justify-content:space-between;
-  font-size:13px;
+background:#7b1113;
+color:#fff;
+padding:5px 5%;
+display:flex;
+justify-content:space-between;
+font-size:13px;
 }
 
-/* NAVBAR */
-
 .navbar{
-  position:sticky;
-  top:0;
-  z-index:999;
-  background:#fff;
-  padding:12px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 4px 20px rgba(0,0,0,.06);
+position:sticky;
+top:0;
+z-index:999;
+background:#fff;
+padding:12px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 4px 20px rgba(0,0,0,.06);
 }
 
 .logo-img{
-  width:300px;
-  height:auto;
+width:300px;
+height:auto;
 }
 
 .navlinks{
-  display:flex;
-  gap:28px;
-  font-weight:700;
-  font-size:18px;
+display:flex;
+gap:28px;
+font-weight:700;
+font-size:18px;
 }
 
 .navlinks a:hover{
-  color:#7b1113;
+color:#7b1113;
 }
 
-/* HERO */
-
 .hero{
-  min-height:calc(100vh - 130px);
-  background:
-  linear-gradient(rgba(73,0,0,.75),rgba(73,0,0,.75)),
-  url('assets/outreach-hero.jpg') center/cover;
-  display:flex;
-  align-items:flex-start;
-  padding:70px 5% 50px;
-  color:#fff;
+min-height:calc(100vh - 130px);
+background:
+linear-gradient(rgba(73,0,0,.75),rgba(73,0,0,.75)),
+url('assets/outreach-hero.jpg') center/cover;
+padding:70px 5% 60px;
+color:#fff;
 }
 
 .hero-grid{
-  display:grid;
-  grid-template-columns:1fr 580px;
-  gap:60px;
-  align-items:start;
-  width:100%;
-  max-width:1450px;
-  margin:0 auto;
+display:grid;
+grid-template-columns:minmax(600px,1fr) 620px;
+gap:90px;
+align-items:start;
+width:100%;
+max-width:1600px;
+margin:0 auto;
+}
+
+.hero-text{
+position:sticky;
+top:150px;
 }
 
 .badge{
-  display:inline-block;
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.3);
-  padding:10px 18px;
-  border-radius:999px;
-  font-weight:700;
-  margin-bottom:20px;
+display:inline-block;
+background:rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.3);
+padding:10px 18px;
+border-radius:999px;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:78px;
-  line-height:1;
-  font-weight:900;
-  margin-bottom:25px;
+font-size:78px;
+line-height:1;
+font-weight:900;
+margin-bottom:25px;
 }
 
 .hero p{
-  font-size:21px;
-  max-width:700px;
-  margin-bottom:30px;
-  color:#f2f2f2;
+font-size:21px;
+max-width:700px;
+margin-bottom:30px;
+color:#f2f2f2;
 }
 
 .hero-actions{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+margin-top:30px;
 }
 
-/* BUTTONS */
-
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 24px;
-  border-radius:999px;
-  font-weight:800;
-  transition:.2s ease;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:999px;
+font-weight:800;
+transition:.2s ease;
 }
 
 .btn-primary{
-  background:#7b1113;
-  color:#fff;
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
+background:#7b1113;
+color:#fff;
 }
 
 .btn-outline{
-  border:2px solid #fff;
-  color:#fff;
+border:2px solid #fff;
+color:#fff;
 }
-
-.btn-outline:hover{
-  background:#fff;
-  color:#7b1113;
-}
-
-/* DONATION CARD */
 
 .donation-card{
-  background:#fff;
-  border-radius:30px;
-  padding:28px;
-  color:#222;
-  box-shadow:0 25px 70px rgba(0,0,0,.25);
-  width:100%;
-  max-width:580px;
+background:#fff;
+border-radius:32px;
+padding:38px;
+color:#222;
+box-shadow:0 25px 70px rgba(0,0,0,.25);
+width:100%;
+max-width:620px;
 }
 
 .donation-card h3{
-  font-size:30px;
-  color:#7b1113;
-  margin-bottom:8px;
+font-size:34px;
+color:#7b1113;
+margin-bottom:10px;
 }
 
 .donation-card p{
-  color:#555;
-  margin-bottom:20px;
+color:#555;
+margin-bottom:24px;
+font-size:17px;
 }
-
-.amounts{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-bottom:22px;
-}
-
-.amount{
-  padding:18px;
-  border:1px solid #ead7d8;
-  border-radius:16px;
-  text-align:center;
-  font-weight:800;
-  background:#fff7f7;
-  color:#7b1113;
-  font-size:20px;
-}
-
-/* BANK BOX */
 
 .bankbox{
-  background:#f8fbff;
-  border-left:5px solid #007dff;
-  border-radius:24px;
-  padding:22px;
-  margin-top:20px;
-  overflow:hidden;
+background:#f8fbff;
+border-left:5px solid #007dff;
+border-radius:26px;
+padding:28px;
+overflow:hidden;
+margin-top:20px;
 }
 
-/* SECTION */
-
 .section{
-  padding:90px 5%;
+padding:90px 5%;
 }
 
 .container{
-  max-width:1250px;
-  margin:auto;
+max-width:1250px;
+margin:auto;
 }
-
-.section-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.section-title span{
-  color:#7b1113;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  font-size:13px;
-}
-
-.section-title h2{
-  font-size:52px;
-  margin-top:10px;
-}
-
-.section-title p{
-  max-width:800px;
-  margin:auto;
-  color:#666;
-}
-
-/* CARDS */
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-
-.card{
-  background:#fff;
-  border-radius:24px;
-  padding:30px;
-  border:1px solid #eee;
-  box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.icon{
-  width:60px;
-  height:60px;
-  background:#fff0f0;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-.card h3{
-  color:#7b1113;
-  margin-bottom:10px;
-  font-size:24px;
-}
-
-/* ABOUT */
 
 .about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
 }
 
 .photo-card{
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.15);
 }
 
 .about h2{
-  font-size:52px;
-  color:#7b1113;
-  margin-bottom:20px;
+font-size:52px;
+color:#7b1113;
+margin-bottom:20px;
 }
 
-/* IMPACT */
-
 .impact{
-  background:#faf7f2;
+background:#faf7f2;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title span{
+color:#7b1113;
+font-weight:800;
+letter-spacing:1px;
+text-transform:uppercase;
+font-size:13px;
+}
+
+.section-title h2{
+font-size:52px;
+margin-top:10px;
 }
 
 .impact-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
 .impact-box{
-  background:#fff;
-  border-radius:24px;
-  padding:28px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.05);
-  border-bottom:5px solid #7b1113;
+background:#fff;
+border-radius:24px;
+padding:28px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+border-bottom:5px solid #7b1113;
 }
 
 .impact-box strong{
-  display:block;
-  font-size:42px;
-  color:#7b1113;
+display:block;
+font-size:42px;
+color:#7b1113;
 }
 
-/* CTA */
-
 .cta{
-  background:linear-gradient(120deg,#7b1113,#a3191d);
-  color:#fff;
-  padding:60px 30px;
-  border-radius:36px;
-  text-align:center;
+background:linear-gradient(120deg,#7b1113,#a3191d);
+color:#fff;
+padding:60px 30px;
+border-radius:36px;
+text-align:center;
 }
 
 .cta h2{
-  font-size:48px;
-  margin-bottom:15px;
+font-size:48px;
+margin-bottom:15px;
 }
 
-/* FOOTER */
-
 .footer{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:45px 5%;
+background:#111;
+color:#fff;
+text-align:center;
+padding:45px 5%;
+}
+
+.footer p{
+margin-top:8px;
+color:#aaa;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:1200px){
 
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
+.hero-grid{
+grid-template-columns:1fr;
+gap:45px;
+}
 
-  .donation-card{
-    max-width:700px;
-    margin:auto;
-  }
+.hero-text{
+position:relative;
+top:auto;
+text-align:center;
+}
+
+.hero p{
+margin:auto auto 30px;
+}
+
+.hero-actions{
+justify-content:center;
+}
+
+.donation-card{
+max-width:760px;
+margin:auto;
+}
 
 }
 
-@media(max-width:950px){
+@media(max-width:992px){
 
-  .cards,
-  .impact-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .navlinks{
-    display:none;
-  }
-
-  .hero h1{
-    font-size:78px;
-    margin-top: 10px;
-  }
-
+.topbar{
+padding:6px 4%;
+font-size:12px;
 }
 
-@media(max-width:700px){
+.navbar{
+padding:12px 4%;
+}
 
-  .cards,
-  .impact-grid,
-  .amounts{
-    grid-template-columns:1fr;
-  }
+.logo-img{
+width:220px;
+}
+
+.hero{
+padding:50px 4%;
+}
 
 .hero h1{
-  font-size:78px;
-  line-height:1;
-  font-weight:900;
-  margin-bottom:25px;
+font-size:58px;
+line-height:1.05;
 }
 
-  .logo-img{
-    width:180px;
-  }
+.hero p{
+font-size:18px;
+max-width:100%;
+}
 
-  .hero-actions{
-    flex-direction:column;
-  }
+.about-grid{
+grid-template-columns:1fr;
+gap:35px;
+}
 
-  .btn{
-    width:100%;
-  }
+.impact-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about h2,
+.section-title h2{
+font-size:42px;
+}
+
+.bankbox > div{
+flex-wrap:wrap !important;
+justify-content:center !important;
+text-align:center;
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+display:none;
+}
+
+.navbar{
+justify-content:center;
+padding:14px 5%;
+}
+
+.navlinks{
+display:none;
+}
+
+.logo-img{
+width:190px;
+}
+
+.hero{
+padding:45px 5%;
+min-height:auto;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.badge{
+font-size:13px;
+padding:8px 16px;
+}
+
+.hero-actions{
+flex-direction:column;
+width:100%;
+}
+
+.hero-actions a{
+width:100%;
+}
+
+.donation-card{
+padding:24px;
+border-radius:24px;
+max-width:100%;
+}
+
+.donation-card h3{
+font-size:30px;
+}
+
+.bankbox{
+padding:18px;
+}
+
+.bankbox > div{
+display:flex !important;
+flex-direction:column;
+align-items:center !important;
+}
+
+.bankbox img[src="assets/qrcode.png"]{
+width:180px !important;
+height:180px !important;
+margin-top:15px;
+}
+
+.section{
+padding:70px 5%;
+}
+
+.impact-grid{
+grid-template-columns:1fr;
+}
+
+.cta{
+padding:40px 22px;
+border-radius:24px;
+}
+
+.cta h2{
+font-size:38px;
+}
+
+.cta div{
+flex-direction:column;
+align-items:center;
+}
+
+.cta a{
+width:100%;
+max-width:320px;
+}
+
+.footer{
+padding:35px 5%;
+font-size:14px;
+}
+
+}
+
+@media(max-width:480px){
+
+.logo-img{
+width:170px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:15px;
+line-height:1.7;
+}
+
+.hero-actions a{
+font-size:15px;
+padding:14px 18px;
+}
+
+.donation-card{
+padding:18px;
+}
+
+.donation-card h3{
+font-size:26px;
+}
+
+.bankbox{
+padding:15px;
+}
+
+.bankbox strong,
+#hiddenNumber,
+#realNumber a{
+font-size:22px !important;
+}
+
+.bankbox button{
+width:100%;
+}
+
+.about h2,
+.section-title h2,
+.cta h2{
+font-size:32px;
+}
+
+.impact-box strong{
+font-size:34px;
+}
 
 }
 
@@ -430,23 +526,22 @@ img{
 <body>
 
 <div class="topbar">
-  <div>TEAM LINGAP • Alabang, Muntinlupa</div>
-  <div>Small Acts. Big Hope.</div>
+<div>TEAM LINGAP • Alabang, Muntinlupa</div>
+<div>Small Acts. Big Hope.</div>
 </div>
 
 <nav class="navbar">
 
-  <a href="#home">
-    <img src="assets/lingap-logo.png" class="logo-img">
-  </a>
+<a href="#home">
+<img src="assets/lingap-logo.png" class="logo-img">
+</a>
 
-  <div class="navlinks">
-    <a href="#about">About</a>
-    <a href="#impact">Impact</a>
-    <a href="#donate">Donate</a>
-    <a href="#primer">Primer</a>
-    <a href="#contact">Contact</a>
-  </div>
+<div class="navlinks">
+<a href="#about">About</a>
+<a href="#impact">Impact</a>
+<a href="#donate">Donate</a>
+<a href="#contact">Contact</a>
+</div>
 
 </nav>
 
@@ -454,242 +549,221 @@ img{
 
 <div class="hero-grid">
 
-  <!-- LEFT -->
+<div class="hero-text">
 
-  <div>
+<div class="badge">
+Bridging Hope Through Education
+</div>
 
-    <div class="badge">
-      Bridging Hope Through Education
-    </div>
+<h1>
+Help a child go to school with confidence.
+</h1>
 
-    <h1>
-      Help a child go to school with confidence.
-    </h1>
+<p>
+Team Lingap supports children in underserved communities by providing school supplies, learning materials, hygiene kits, and simple educational assistance.
+</p>
 
-    <p>
-      Team Lingap supports children in underserved communities by providing school supplies, learning materials, hygiene kits, and simple educational assistance.
-    </p>
+<div class="hero-actions">
 
-    <div class="hero-actions">
+<a href="https://www.facebook.com/people/Team-Lingap/61561326512438/"
+target="_blank"
+class="btn btn-primary"
+style="gap:10px">
 
-      <a href="#donate" class="btn btn-primary">
-        Donate Any Amount
-      </a>
+<img src="assets/facebook.png"
+style="width:22px;height:22px">
 
-      <a href="assets/TEAM-LINGAP-PRIMER.pdf.pdf"
-         target="_blank"
-         class="btn btn-outline">
+<span>Contact via Facebook</span>
 
-        View Lingap Primer
+</a>
 
-      </a>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=teamlingap@gmail.com"
+target="_blank"
+class="btn btn-outline"
+style="gap:10px">
 
-    </div>
+<img src="assets/Gmail.png"
+style="width:22px;height:22px;filter:brightness(0) invert(1)">
 
-  </div>
+<span>Email Team Lingap</span>
 
-  <!-- RIGHT -->
+</a>
 
-  <div class="donation-card" id="donate">
+</div>
 
-    <h3>Small Donation Drive</h3>
+</div>
 
-    <p>
-      No amount is too small. Your help can become notebooks, pencils, paper, hygiene items, or snacks for children.
-    </p>
+<div class="donation-card" id="donate">
 
-    <div class="amounts">
+<h3>Contact Us to Donate</h3>
 
-      <div class="amount">₱100</div>
-      <div class="amount">₱300</div>
-      <div class="amount">₱500</div>
-      <div class="amount">₱800</div>
-      <div class="amount">₱1000</div>
-      <div class="amount">Any Amount</div>
+<p>
+For donations, sponsorships, or in-kind support, you may contact Team Lingap through Facebook or use the GCash details below.
+</p>
 
-    </div>
+<div class="bankbox">
 
-    <a href="#contact"
-       class="btn btn-primary"
-       style="width:100%;margin-bottom:18px">
+<div style="
+display:flex;
+justify-content:space-between;
+gap:24px;
+align-items:center;
+flex-wrap:nowrap;
+">
 
-      Contact Us to Donate
+<div style="flex:1">
 
-    </a>
+<div style="
+display:flex;
+align-items:center;
+gap:16px;
+margin-bottom:22px;
+">
 
-    <!-- BANK BOX -->
+<img src="assets/gcash-logo.png"
+style="width:70px">
 
-    <div class="bankbox">
+<div>
 
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        gap:24px;
-        align-items:center;
-        flex-wrap:nowrap;
-      ">
+<h3 style="
+font-size:23px;
+color:#1e293b;
+line-height:1;
+margin:0;
+font-weight:900;
+">
+GCash E-Wallet
+</h3>
 
-        <!-- LEFT SIDE -->
+<p style="
+color:#007dff;
+font-weight:700;
+margin-top:6px;
+">
+Donation Details
+</p>
 
-        <div style="flex:1">
+</div>
 
-          <div style="
-            display:flex;
-            align-items:center;
-            gap:16px;
-            margin-bottom:22px;
-          ">
+</div>
 
-            <img src="assets/gcash-logo.png"
-                 style="width:70px">
+<div style="
+background:#fff;
+padding:18px;
+border-radius:20px;
+margin-bottom:14px;
+">
 
-            <div>
+<small style="
+color:#64748b;
+font-weight:800;
+letter-spacing:1px;
+">
+ACCOUNT NAME
+</small>
 
-              <h3 style="
-                font-size:23px;
-                color:#1e293b;
-                line-height:1;
-                margin:0;
-                font-weight:150px;
-              ">
-                GCash E-Wallet
-              </h3>
+<br>
 
-              <p style="
-                color:#007dff;
-                font-weight:700;
-                margin-top:6px;
-              ">
-                Donation Details
-              </p>
+<strong style="
+font-size:28px;
+color:#111827;
+">
+Ir**e L.
+</strong>
 
-            </div>
+</div>
 
-          </div>
+<div style="
+background:#fff;
+padding:18px;
+border-radius:20px;
+">
 
-          <!-- ACCOUNT -->
+<small style="
+color:#64748b;
+font-weight:800;
+letter-spacing:1px;
+">
+GCASH NUMBER
+</small>
 
-          <div style="
-            background:#fff;
-            padding:18px;
-            border-radius:20px;
-            margin-bottom:14px;
-          ">
+<div id="hiddenNumber"
+style="
+font-size:30px;
+font-weight:900;
+margin-top:10px;
+margin-bottom:15px;
+">
+09•• ••• •428
+</div>
 
-            <small style="
-              color:#64748b;
-              font-weight:800;
-              letter-spacing:1px;
-            ">
-              ACCOUNT NAME
-            </small>
+<div id="realNumber"
+style="
+display:none;
+margin-top:10px;
+margin-bottom:15px;
+">
 
-            <br>
+<a href="tel:09850428428"
+style="
+font-size:30px;
+color:#007dff;
+font-weight:900;
+">
+0985 042 8428
+</a>
 
-            <strong style="
-              font-size:28px;
-              color:#111827;
-            ">
-              Ir**e L.
-            </strong>
+</div>
 
-          </div>
+<button onclick="toggleNumber()"
+id="toggleBtn"
+style="
+background:#007dff;
+color:#fff;
+border:none;
+padding:12px 22px;
+border-radius:999px;
+font-weight:800;
+cursor:pointer;
+">
 
-          <!-- NUMBER -->
+View Number
 
-          <div style="
-            background:#fff;
-            padding:18px;
-            border-radius:20px;
-          ">
+</button>
 
-            <small style="
-              color:#64748b;
-              font-weight:800;
-              letter-spacing:1px;
-            ">
-              GCASH NUMBER
-            </small>
+</div>
 
-            <div id="hiddenNumber"
-                 style="
-                  font-size:30px;
-                  font-weight:900;
-                  margin-top:10px;
-                  margin-bottom:15px;
-                 ">
-              09•• ••• •428
-            </div>
+</div>
 
-            <div id="realNumber"
-                 style="
-                  display:none;
-                  margin-top:10px;
-                  margin-bottom:15px;
-                 ">
+<div style="
+width:180px;
+display:flex;
+justify-content:center;
+">
 
-              <a href="tel:09850428428"
-                 style="
-                  font-size:30px;
-                  color:#007dff;
-                  font-weight:900;
-                 ">
-                0985 042 8428
-              </a>
+<div style="
+background:#fff;
+padding:12px;
+border-radius:22px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+">
 
-            </div>
+<img src="assets/qrcode.png"
+style="
+width:160px;
+height:160px;
+border-radius:16px;
+">
 
-            <button onclick="toggleNumber()"
-                    id="toggleBtn"
-                    style="
-                      background:#007dff;
-                      color:#fff;
-                      border:none;
-                      padding:12px 22px;
-                      border-radius:999px;
-                      font-weight:800;
-                      cursor:pointer;
-                    ">
+</div>
 
-              View Number
+</div>
 
-            </button>
+</div>
 
-          </div>
+</div>
 
-        </div>
-
-        <!-- QR -->
-
-        <div style="
-          width:180px;
-          display:flex;
-          justify-content:center;
-        ">
-
-          <div style="
-            background:#fff;
-            padding:12px;
-            border-radius:22px;
-            box-shadow:0 8px 20px rgba(0,0,0,.08);
-          ">
-
-            <img src="assets/qrcode.png"
-                 style="
-                  width:160px;
-                  height:160px;
-                  border-radius:16px;
-                 ">
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
@@ -699,30 +773,30 @@ img{
 
 <div class="container about-grid">
 
-  <div class="photo-card">
-    <img src="assets/team-lingap-outreach.jpg">
-  </div>
+<div class="photo-card">
+<img src="assets/team-lingap-outreach.jpg">
+</div>
 
-  <div>
+<div>
 
-    <span style="
-      color:#7b1113;
-      font-weight:800;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    ">
-      About the Outreach
-    </span>
+<span style="
+color:#7b1113;
+font-weight:800;
+letter-spacing:1px;
+text-transform:uppercase;
+">
+About the Outreach
+</span>
 
-    <h2>
-      Simple support for school children in need.
-    </h2>
+<h2>
+Simple support for school children in need.
+</h2>
 
-    <p>
-      Education is one of the strongest foundations for a child’s future. Through this outreach, Team Lingap aims to help children begin the school year with dignity, hope, and basic learning materials.
-    </p>
+<p>
+Education is one of the strongest foundations for a child’s future. Through this outreach, Team Lingap aims to help children begin the school year with dignity, hope, and basic learning materials.
+</p>
 
-  </div>
+</div>
 
 </div>
 
@@ -732,39 +806,125 @@ img{
 
 <div class="container">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <span>Target Impact</span>
+<span>Target Impact</span>
 
-    <h2>
-      Every small donation helps
-    </h2>
+<h2>
+Every small donation helps
+</h2>
 
-  </div>
+</div>
 
-  <div class="impact-grid">
+<div class="impact-grid">
 
-    <div class="impact-box">
-      <strong>₱100</strong>
-      <span>Basic supplies</span>
-    </div>
+<div class="impact-box">
+<strong>₱100</strong>
+<span>Basic supplies</span>
+</div>
 
-    <div class="impact-box">
-      <strong>₱300</strong>
-      <span>Notebook support</span>
-    </div>
+<div class="impact-box">
+<strong>₱300</strong>
+<span>Notebook support</span>
+</div>
 
-    <div class="impact-box">
-      <strong>₱800</strong>
-      <span>Learning kit help</span>
-    </div>
+<div class="impact-box">
+<strong>₱800</strong>
+<span>Learning kit help</span>
+</div>
 
-    <div class="impact-box">
-      <strong>₱1000</strong>
-      <span>Support several children</span>
-    </div>
+<div class="impact-box">
+<strong>₱1000</strong>
+<span>Support several children</span>
+</div>
 
-  </div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<div class="cta">
+
+<h2>Contact Us to Donate</h2>
+
+<p>
+For donations, sponsorships, or in-kind support, you may contact Team Lingap through Facebook or email.
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+margin-top:35px;
+">
+
+<a href="https://www.facebook.com/people/Team-Lingap/61561326512438/"
+target="_blank"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+background:#fff;
+color:#7b1113;
+padding:16px 30px;
+border-radius:999px;
+font-weight:800;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+min-width:240px;
+transition:.2s ease;
+">
+
+<img src="assets/facebook.png"
+style="
+width:24px;
+height:24px;
+object-fit:contain;
+">
+
+<span>Facebook Page</span>
+
+</a>
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=teamlingap@gmail.com"
+target="_blank"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+background:#fff;
+color:#7b1113;
+padding:16px 30px;
+border-radius:999px;
+font-weight:800;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+min-width:240px;
+transition:.2s ease;
+">
+
+<img src="assets/Gmail.png"
+style="
+width:24px;
+height:24px;
+object-fit:contain;
+">
+
+<span>Email Team Lingap</span>
+
+</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -772,11 +932,15 @@ img{
 
 <footer class="footer">
 
-  <strong>Team Lingap</strong>
+<strong>Team Lingap</strong>
 
-  <p>
-    Bridging Hope Through Education • Alabang Community Outreach
-  </p>
+<p>
+Bridging Hope Through Education • Alabang Community Outreach
+</p>
+
+<p>
+© 2026 Team Lingap. All rights reserved.
+</p>
 
 </footer>
 
@@ -784,35 +948,32 @@ img{
 
 function toggleNumber(){
 
-  const hidden =
-  document.getElementById("hiddenNumber");
+const hidden =
+document.getElementById("hiddenNumber");
 
-  const real =
-  document.getElementById("realNumber");
+const real =
+document.getElementById("realNumber");
 
-  const btn =
-  document.getElementById("toggleBtn");
+const btn =
+document.getElementById("toggleBtn");
 
-  if(real.style.display === "none"){
+if(real.style.display === "none"){
 
-    hidden.style.display = "none";
-    real.style.display = "block";
-    btn.innerText = "Hide Number";
+hidden.style.display = "none";
+real.style.display = "block";
+btn.innerText = "Hide Number";
 
-  }else{
+}else{
 
-    hidden.style.display = "block";
-    real.style.display = "none";
-    btn.innerText = "View Number";
-
-  }
+hidden.style.display = "block";
+real.style.display = "none";
+btn.innerText = "View Number";
 
 }
+
+}
+
 </script>
-  <footer class="footer">
-    <strong>Team Lingap </strong>
-    <p>Bridging Hope Through Education • Alabang Community Outreach</p>
-    <p>© 2026 Team Lingap. All rights reserved.</p>
-  </footer>
+
 </body>
 </html>
