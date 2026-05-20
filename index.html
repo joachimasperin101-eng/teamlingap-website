@@ -775,6 +775,70 @@ font-size:18px;
 }
 
 }
+.popup-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.72);
+z-index:99999;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.elementor-widget-container.popup-box{
+position:relative;
+width:100%;
+max-width:680px;
+background:#fff;
+box-shadow:0 25px 80px rgba(0,0,0,.45);
+animation:popupZoom .35s ease;
+}
+
+.popup-img{
+width:100%;
+height:auto;
+display:block;
+}
+
+.popup-close{
+position:absolute;
+top:14px;
+right:14px;
+width:42px;
+height:42px;
+border:none;
+background:#7b1113;
+color:#fff;
+font-size:32px;
+font-weight:900;
+cursor:pointer;
+z-index:2;
+line-height:1;
+}
+
+@keyframes popupZoom{
+from{
+opacity:0;
+transform:scale(.9);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@media(max-width:768px){
+.elementor-widget-container.popup-box{
+max-width:95%;
+}
+
+.popup-close{
+width:36px;
+height:36px;
+font-size:28px;
+}
+}
 
 </style>
 
@@ -1304,6 +1368,22 @@ document
 }
 
 </script>
+<div class="popup-overlay" id="popupOverlay">
+  <div class="elementor-widget-container popup-box">
+    <button class="popup-close" onclick="closePopup()">×</button>
 
+    <img src="assets/popup.jpg" alt="Announcement" class="popup-img">
+  </div>
+</div>
+
+<script>
+function closePopup(){
+  document.getElementById("popupOverlay").style.display = "none";
+}
+
+window.onload = function(){
+  document.getElementById("popupOverlay").style.display = "flex";
+}
+</script>
 </body>
 </html>
