@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Activities | Team Lingap</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#f7f7f7;
+color:#222;
+overflow-x:hidden;
+line-height:1.7;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.topbar{
+background:#7b1113;
+color:#fff;
+padding:7px 5%;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+font-weight:600;
+}
+
+.navbar{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(255,255,255,.94);
+backdrop-filter:blur(14px);
+padding:14px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 6px 25px rgba(0,0,0,.06);
+}
+
+.logo-img{
+width:250px;
+}
+
+.menu-toggle{
+background:#7b1113;
+color:#fff;
+border:none;
+width:55px;
+height:55px;
+border-radius:18px;
+font-size:28px;
+font-weight:900;
+cursor:pointer;
+transition:.25s ease;
+}
+
+.menu-toggle:hover{
+background:#a3191d;
+transform:translateY(-4px);
+}
+
+.sidebar-menu{
+position:fixed;
+top:0;
+left:-330px;
+width:300px;
+height:100vh;
+background:#fff;
+z-index:3000;
+padding:28px 22px 40px;
+display:flex;
+flex-direction:column;
+gap:8px;
+transition:.35s ease;
+box-shadow:15px 0 50px rgba(0,0,0,.18);
+overflow-y:auto;
+}
+
+.sidebar-menu.active{
+left:0;
+}
+
+.sidebar-logo{
+width:190px;
+margin:0 auto 20px;
+}
+
+.sidebar-menu a{
+font-size:15px;
+font-weight:800;
+letter-spacing:1.4px;
+color:#666;
+padding:15px 18px;
+border-radius:18px;
+text-transform:uppercase;
+transition:.25s ease;
+}
+
+.sidebar-menu a:hover{
+background:#fff1f1;
+color:#7b1113;
+transform:translateX(6px);
+}
+
+.active-link{
+background:#7b1113;
+color:#fff!important;
+}
+
+.close-menu{
+position:absolute;
+top:16px;
+right:16px;
+background:#fff1f1;
+border:none;
+width:44px;
+height:44px;
+border-radius:50%;
+font-size:28px;
+cursor:pointer;
+color:#7b1113;
+font-weight:900;
+}
+
+.menu-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(3px);
+z-index:2500;
+opacity:0;
+pointer-events:none;
+transition:.3s ease;
+}
+
+.menu-overlay.active{
+opacity:1;
+pointer-events:auto;
+}
+
+.video-section{
+padding:90px 5% 60px;
+background:#fff;
+text-align:center;
+}
+
+.video-label{
+letter-spacing:8px;
+font-size:15px;
+font-weight:800;
+color:#7b1113;
+margin-bottom:18px;
+}
+
+.video-title{
+font-size:42px;
+font-weight:900;
+margin-bottom:12px;
+}
+
+.video-subtitle{
+font-size:18px;
+color:#555;
+margin-bottom:45px;
+}
+
+.video-frame{
+max-width:1150px;
+margin:auto;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 25px 80px rgba(0,0,0,.18);
+background:#000;
+}
+
+.video-frame iframe{
+width:100%;
+height:600px;
+display:block;
+border:none;
+}
+
+@media(max-width:768px){
+
+.video-frame iframe{
+height:280px;
+}
+
+}
+
+.activities-gallery{
+padding:100px 5%;
+background:#faf7f2;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title span{
+font-size:14px;
+font-weight:900;
+letter-spacing:2px;
+color:#7b1113;
+text-transform:uppercase;
+}
+
+.section-title h2{
+font-size:52px;
+margin-top:12px;
+}
+
+.activity-group{
+display:flex;
+align-items:center;
+gap:50px;
+margin-bottom:90px;
+}
+
+.activity-group.reverse{
+flex-direction:row-reverse;
+}
+
+.activity-info{
+flex:1;
+}
+
+.activity-info h3{
+font-size:42px;
+font-weight:900;
+color:#7b1113;
+margin-bottom:18px;
+}
+
+.activity-info p{
+font-size:18px;
+line-height:1.9;
+color:#555;
+margin-bottom:22px;
+}
+
+.activity-info span{
+display:inline-block;
+background:#7b1113;
+color:#fff;
+padding:10px 20px;
+border-radius:999px;
+font-weight:800;
+}
+
+.activity-slider{
+flex:1;
+position:relative;
+height:520px;
+border-radius:35px;
+overflow:hidden;
+box-shadow:0 25px 80px rgba(0,0,0,.15);
+background:#fff;
+}
+
+.activity-slider img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:contain;
+background:#fff;
+opacity:0;
+transition:opacity 1s ease;
+padding:10px;
+}
+
+.activity-slider img.active{
+opacity:1;
+z-index:2;
+}
+
+.slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:48px;
+height:48px;
+border:none;
+border-radius:50%;
+background:rgba(123,17,19,.92);
+color:#fff;
+font-size:30px;
+font-weight:900;
+cursor:pointer;
+z-index:5;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:.25s ease;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.slider-btn:hover{
+background:#a3191d;
+transform:translateY(-50%) scale(1.08);
+}
+
+.slider-btn.prev{
+left:16px;
+}
+
+.slider-btn.next{
+right:16px;
+}
+
+.footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:55px 5%;
+}
+
+.footer p{
+margin-top:8px;
+color:#aaa;
+}
+
+@media(max-width:992px){
+
+.activity-group{
+flex-direction:column;
+}
+
+.activity-group.reverse{
+flex-direction:column;
+}
+
+.activity-info h3{
+font-size:34px;
+}
+
+.activity-slider{
+width:100%;
+height:450px;
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+display:none;
+}
+
+.logo-img{
+width:180px;
+}
+
+.video-title{
+font-size:28px;
+}
+
+.video-subtitle{
+font-size:15px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+.activity-info{
+text-align:center;
+}
+
+.activity-info h3{
+font-size:28px;
+}
+
+.activity-info p{
+font-size:15px;
+}
+
+.activity-slider{
+height:320px;
+border-radius:24px;
+}
+
+.slider-btn{
+width:40px;
+height:40px;
+font-size:24px;
+}
+
+.sidebar-menu{
+width:280px;
+}
+
+}
+.clickable-title{
+cursor:pointer;
+transition:.25s ease;
+}
+
+.clickable-title:hover{
+color:#a3191d;
+transform:translateX(6px);
+}
+
+.activity-popup-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(6px);
+z-index:99999;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.activity-popup-box{
+width:100%;
+max-width:750px;
+background:#fff;
+border-radius:35px;
+padding:45px;
+position:relative;
+box-shadow:0 30px 90px rgba(0,0,0,.3);
+animation:popupFade .3s ease;
+overflow:hidden;
+}
+
+.activity-popup-box::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:7px;
+background:linear-gradient(90deg,#7b1113,#d63c3c);
+}
+
+.activity-popup-close{
+position:absolute;
+top:18px;
+right:18px;
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+background:#7b1113;
+color:#fff;
+font-size:30px;
+font-weight:900;
+cursor:pointer;
+}
+
+.activity-popup-box span{
+display:inline-block;
+background:#7b1113;
+color:#fff;
+padding:9px 18px;
+border-radius:999px;
+font-size:13px;
+font-weight:800;
+margin-bottom:18px;
+}
+
+.activity-popup-box h2{
+font-size:36px;
+color:#7b1113;
+line-height:1.2;
+margin-bottom:18px;
+padding-right:45px;
+}
+
+.activity-popup-box p{
+font-size:17px;
+line-height:1.9;
+color:#555;
+}
+
+@keyframes popupFade{
+from{opacity:0;transform:scale(.92) translateY(20px)}
+to{opacity:1;transform:scale(1) translateY(0)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+<div>TEAM LINGAP • Alabang, Muntinlupa</div>
+<div>Small Acts. Big Hope.</div>
+</div>
+
+<nav class="navbar">
+
+<a href="/">
+<img src="../assets/lingap-logo.png" class="logo-img">
+</a>
+
+<button class="menu-toggle" onclick="openMenu()">☰</button>
+
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<div class="sidebar-menu" id="sidebarMenu">
+
+<button class="close-menu" onclick="closeMenu()">×</button>
+
+<img src="../assets/lingap-logo.png" class="sidebar-logo">
+
+<a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/genesis/">Genesis</a>
+<a href="/activities/" class="active-link">Activities</a>
+
+</div>
+
+<section class="video-section">
+
+<div class="video-label">
+TEAM LINGAP YEAR END RECAP 2024
+</div>
+
+<h1 class="video-title">
+Check out this great video
+</h1>
+
+<p class="video-subtitle">
+A glimpse of Team Lingap Generations’ service, teamwork, and outreach journey.
+</p>
+
+<div class="video-frame">
+
+<iframe
+src="https://www.youtube.com/embed/CFkQSXfbOFo?autoplay=1&mute=1&loop=1&playlist=CFkQSXfbOFo"
+title="TEAM LINGAP YEAR END RECAP 2024"
+allow="autoplay; encrypted-media"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<section class="activities-gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+Featured Activities
+</span>
+
+<h2>
+Moments of Service and Leadership
+</h2>
+
+</div>
+
+<div class="activity-group">
+
+<div class="activity-info">
+
+<h3 class="clickable-title" onclick="openActivityPopup('outreach')">
+Lingap Bernadettian Outreach Program
+</h3>
+
+<p>
+Team Lingap launched its first outreach activity during the SBCA Foundation Anniversary through games, feeding programs, and gift-giving activities.
+</p>
+
+<span>
+February 2024
+</span>
+
+</div>
+
+<div class="activity-slider" id="slider1">
+<button class="slider-btn prev" onclick="manualSlide('slider1', -1)">‹</button>
+<button class="slider-btn next" onclick="manualSlide('slider1', 1)">›</button>
+</div>
+
+</div>
+
+<div class="activity-group reverse">
+
+<div class="activity-info">
+
+<h3 class="clickable-title" onclick="openActivityPopup('relief')">
+Relief Operations for Fire Victims
+</h3>
+
+<p>
+Team Lingap extended assistance to affected communities through relief distribution, donations, and volunteer work.
+</p>
+
+<span>
+March 2024
+</span>
+
+</div>
+
+<div class="activity-slider" id="slider2">
+<button class="slider-btn prev" onclick="manualSlide('slider2', -1)">‹</button>
+<button class="slider-btn next" onclick="manualSlide('slider2', 1)">›</button>
+</div>
+
+</div>
+
+<div class="activity-group">
+
+<div class="activity-info">
+
+<h3 class="clickable-title" onclick="openActivityPopup('hesus')">
+Project H.E.S.U.S
+</h3>
+
+<p>
+A faith-centered outreach activity for children focused on catechesis, games, meals, and community engagement.
+</p>
+
+<span>
+2024 – 2025
+</span>
+
+</div>
+
+<div class="activity-slider" id="slider3">
+<button class="slider-btn prev" onclick="manualSlide('slider3', -1)">‹</button>
+<button class="slider-btn next" onclick="manualSlide('slider3', 1)">›</button>
+</div>
+<div class="activity-popup-overlay" id="activityPopup">
+<div class="activity-popup-box">
+<button class="activity-popup-close" onclick="closeActivityPopup()">×</button>
+<span id="popupDate"></span>
+<h2 id="popupTitle"></h2>
+<p id="popupDescription"></p>
+</div>
+
+
+</section>
+
+<footer class="footer">
+
+<strong>
+Team Lingap
+</strong>
+
+<p>
+Bridging Hope Through Education • Alabang Community Outreach
+</p>
+
+<p>
+© 2026 Team Lingap. All rights reserved.
+</p>
+
+</footer>
+
+<script>
+
+function openMenu(){
+
+document.getElementById("sidebarMenu").classList.add("active");
+document.getElementById("menuOverlay").classList.add("active");
+
+}
+
+function closeMenu(){
+
+document.getElementById("sidebarMenu").classList.remove("active");
+document.getElementById("menuOverlay").classList.remove("active");
+
+}
+
+const outreachImages = [
+
+"../assets/outreach/outreach1.jpg",
+"../assets/outreach/outreach2.jpg",
+"../assets/outreach/outreach3.jpg",
+"../assets/outreach/outreach4.jpg",
+"../assets/outreach/outreach5.jpg",
+"../assets/outreach/outreach6.jpg",
+"../assets/outreach/outreach7.jpg",
+"../assets/outreach/outreach8.jpg"
+
+];
+
+const reliefImages = [
+"../assets/relief/relief0.jpg",
+"../assets/relief/relief1.jpg",
+"../assets/relief/relief2.jpg",
+"../assets/relief/relief3.jpg",
+"../assets/relief/relief4.jpg",
+"../assets/relief/relief5.jpg",
+"../assets/relief/relief6.jpg"
+
+];
+
+const hesusImages = [
+
+"../assets/hesus/hesus1.jpg",
+"../assets/hesus/hesus2.jpg",
+"../assets/hesus/hesus3.jpg",
+"../assets/hesus/hesus4.jpg",
+"../assets/hesus/hesus5.jpg",
+"../assets/hesus/hesus6.jpg"
+];
+
+const sliderStates = {};
+
+function buildSlider(sliderId, images){
+
+const slider = document.getElementById(sliderId);
+
+sliderStates[sliderId] = {
+current:0,
+images:images
+};
+
+images.forEach((src,index)=>{
+
+const img = document.createElement("img");
+
+img.src = src;
+
+if(index === 0){
+
+img.classList.add("active");
+
+}
+
+slider.appendChild(img);
+
+});
+
+setInterval(()=>{
+
+changeSlide(sliderId,1);
+
+},3000);
+
+}
+
+function changeSlide(sliderId,direction){
+
+const slider = document.getElementById(sliderId);
+const slides = slider.querySelectorAll("img");
+
+if(slides.length === 0){
+return;
+}
+
+slides[sliderStates[sliderId].current].classList.remove("active");
+
+sliderStates[sliderId].current += direction;
+
+if(sliderStates[sliderId].current >= slides.length){
+sliderStates[sliderId].current = 0;
+}
+
+if(sliderStates[sliderId].current < 0){
+sliderStates[sliderId].current = slides.length - 1;
+}
+
+slides[sliderStates[sliderId].current].classList.add("active");
+
+}
+
+function manualSlide(sliderId,direction){
+
+changeSlide(sliderId,direction);
+
+}
+
+buildSlider("slider1", outreachImages);
+buildSlider("slider2", reliefImages);
+buildSlider("slider3", hesusImages);
+const activityDetails = {
+outreach:{
+title:"Lingap Bernadettian Outreach Program",
+date:"February 2024",
+description:"Team Lingap Generations marked its first outreach activity through the launching of the Lingap Bernadettian Extension Outreach Program, benefiting twenty (20) adopted families. This initiative was a collaborative effort between the College Department and the Basic Education Department. During the event, Team Lingap facilitated fun and engaging games and activities for the children, creating a joyful and interactive environment. The team also led the distribution of “Lugaw ni Ate Badeth” and hygiene kits, ensuring that the families received both nourishment and essential supplies."
+},
+relief:{
+title:"Relief Operations for Fire Victims",
+date:"March 2024",
+description:"In March 2024, Team Lingap Generations, in collaboration with NSTP and FCL classes, organized a relief operation for families affected by a fire in Alabang, Muntinlupa. A total of 70 families received relief goods, including hygiene kits, clothes, biscuits, and other essential items. The initiative was carried out under the supervision of the Office of the Dean and the Guidance Office, with Team Lingap facilitating and coordinating the distribution."
+},
+hesus:{
+title:"Project H.E.S.U.S",
+date:"December 7, 2024",
+description:"On December 7, 2024, Team Lingap Generations, together with FCL students and the College of Teacher Education, organized Project H.E.S.U.S (I), an outreach activity aimed at bringing joy to children in the community. A total of 100 kids participated in the event, enjoying fun games, interactive activities, and a short program prepared by the team. Gift-giving was also part of the celebration, ensuring that each child left with a smile. This project highlighted the team’s dedication to service, fostering happiness, engagement, and community spirit among the young participants."
+}
+};
+
+function openActivityPopup(activity){
+document.getElementById("popupTitle").innerText=activityDetails[activity].title;
+document.getElementById("popupDate").innerText=activityDetails[activity].date;
+document.getElementById("popupDescription").innerText=activityDetails[activity].description;
+document.getElementById("activityPopup").style.display="flex";
+}
+
+function closeActivityPopup(){
+document.getElementById("activityPopup").style.display="none";
+}
+</script>
+
+</body>
+</html>
