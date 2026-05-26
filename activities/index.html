@@ -423,6 +423,143 @@ line-height:1.9;
 color:#555;
 }
 
+.welcome-slider-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.84);
+backdrop-filter:blur(10px);
+z-index:999999;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+animation:fadeIn .4s ease;
+}
+
+.welcome-slider-box{
+width:100%;
+max-width:1300px;
+position:relative;
+perspective:1500px;
+}
+
+.welcome-close{
+position:absolute;
+top:15px;
+right:15px;
+width:52px;
+height:52px;
+border:none;
+border-radius:50%;
+background:#7b1113;
+color:#fff;
+font-size:30px;
+font-weight:900;
+cursor:pointer;
+z-index:1000;
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+@media(max-width:768px){
+
+.welcome-close{
+top:12px;
+right:12px;
+width:46px;
+height:46px;
+font-size:25px;
+}
+
+}
+.welcome-slider-box{
+padding-top:70px;
+}
+
+.welcome-slider-track{
+position:relative;
+height:620px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:visible;
+}
+
+.welcome-slide{
+position:absolute;
+width:260px;
+height:430px;
+border-radius:32px;
+overflow:hidden;
+opacity:0;
+transform:scale(.5);
+transition:all .8s cubic-bezier(.22,1,.36,1);
+box-shadow:0 35px 90px rgba(61, 61, 61, 0.281);
+background:#ffffff0a;
+}
+
+.welcome-slide img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:#000000ab;
+}
+
+.welcome-slide.active{
+opacity:1;
+z-index:10;
+transform:translateX(0) scale(1.12);
+}
+
+.welcome-slide.left1{
+opacity:.75;
+z-index:7;
+transform:translateX(-300px) rotateY(28deg) scale(.84);
+}
+
+.welcome-slide.left2{
+opacity:.35;
+z-index:5;
+transform:translateX(-540px) rotateY(40deg) scale(.66);
+filter:grayscale(1);
+}
+
+.welcome-slide.right1{
+opacity:.75;
+z-index:7;
+transform:translateX(300px) rotateY(-28deg) scale(.84);
+}
+
+.welcome-slide.right2{
+opacity:.35;
+z-index:5;
+transform:translateX(540px) rotateY(-40deg) scale(.66);
+filter:grayscale(1);
+}
+
+.welcome-dots{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+}
+
+.welcome-dot{
+width:12px;
+height:12px;
+border-radius:50%;
+background:rgba(255,255,255,.35);
+transition:.3s ease;
+cursor:pointer;
+}
+
+.welcome-dot.active{
+background:#fff;
+transform:scale(1.3);
+}
+
 @keyframes popupFade{
 from{
 opacity:0;
@@ -431,6 +568,15 @@ transform:scale(.92) translateY(20px);
 to{
 opacity:1;
 transform:scale(1) translateY(0);
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
 }
 }
 
@@ -610,6 +756,40 @@ font-size:14px;
 line-height:1.8;
 }
 
+.welcome-slider-track{
+height:420px;
+}
+
+.welcome-slide{
+width:150px;
+height:270px;
+border-radius:24px;
+}
+
+.welcome-slide.active{
+transform:translateX(0) scale(1.05);
+}
+
+.welcome-slide.left1{
+transform:translateX(-130px) scale(.82);
+}
+
+.welcome-slide.right1{
+transform:translateX(130px) scale(.82);
+}
+
+.welcome-slide.left2,
+.welcome-slide.right2{
+opacity:0;
+}
+
+.welcome-close{
+top:-55px;
+width:50px;
+height:50px;
+font-size:28px;
+}
+
 }
 
 @media(max-width:480px){
@@ -629,6 +809,70 @@ font-size:22px;
 
 .section-title h2{
 font-size:25px;
+}
+
+.welcome-slide{
+width:135px;
+height:240px;
+}
+
+.welcome-slide.active{
+transform:translateX(0) scale(1.05);
+}
+
+.welcome-slide.left1{
+transform:translateX(-105px) scale(.78);
+}
+
+.welcome-slide.right1{
+transform:translateX(105px) scale(.78);
+}
+
+}
+.welcome-slider-header{
+text-align:center;
+margin-bottom:45px;
+color:#fff;
+}
+
+.welcome-slider-header span{
+display:block;
+font-size:14px;
+font-weight:900;
+letter-spacing:6px;
+text-transform:uppercase;
+margin-bottom:14px;
+color:#d7b5b5;
+}
+
+.welcome-slider-header h1{
+font-size:64px;
+font-weight:900;
+line-height:1;
+margin-bottom:15px;
+background:linear-gradient(to bottom,#ffffff,#d8b0b0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.welcome-slider-header p{
+font-size:18px;
+color:rgba(255,255,255,.72);
+}
+
+@media(max-width:768px){
+
+.welcome-slider-header{
+margin-bottom:25px;
+}
+
+.welcome-slider-header h1{
+font-size:38px;
+}
+
+.welcome-slider-header p{
+font-size:14px;
+padding:0 10px;
 }
 
 }
@@ -816,6 +1060,66 @@ Bridging Hope Through Education • Alabang Community Outreach
 
 </footer>
 
+<div class="welcome-slider-overlay" id="welcomeSlider">
+
+<div class="welcome-slider-box">
+
+<button class="welcome-close" onclick="closeWelcomeSlider()">x</button>
+<div class="welcome-slider-header">
+<span>TEAM LINGAP</span>
+<h1>Activities</h1>
+<p>Moments of Service, Leadership, and Community Outreach</p>
+</div>
+<div class="welcome-slider-track" id="welcomeTrack">
+
+<div class="welcome-slide active">
+<img src="../assets/outreach/outreach1.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/outreach/outreach2.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/outreach/outreach3.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/outreach/outreach4.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/relief/relief1.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/relief/relief2.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/relief/relief3.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/hesus/hesus1.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/hesus/hesus2.jpg">
+</div>
+
+<div class="welcome-slide">
+<img src="../assets/hesus/hesus3.jpg">
+</div>
+
+</div>
+
+<div class="welcome-dots" id="welcomeDots"></div>
+
+</div>
+
+</div>
+
 <script>
 
 function openMenu(){
@@ -970,6 +1274,133 @@ document.getElementById("activityPopup").style.display = "none";
 buildSlider("slider1", outreachImages);
 buildSlider("slider2", reliefImages);
 buildSlider("slider3", hesusImages);
+
+const welcomeSlides = document.querySelectorAll(".welcome-slide");
+const welcomeDots = document.getElementById("welcomeDots");
+
+let welcomeIndex = 0;
+
+welcomeSlides.forEach((slide,index)=>{
+
+const dot = document.createElement("div");
+
+dot.classList.add("welcome-dot");
+
+dot.onclick = ()=>{
+
+welcomeIndex = index;
+updateWelcomeSlider();
+
+};
+
+welcomeDots.appendChild(dot);
+
+});
+
+function updateWelcomeSlider(){
+
+welcomeSlides.forEach((slide,index)=>{
+
+slide.className = "welcome-slide";
+
+let offset = index - welcomeIndex;
+
+if(offset > welcomeSlides.length / 2){
+offset -= welcomeSlides.length;
+}
+
+if(offset < -welcomeSlides.length / 2){
+offset += welcomeSlides.length;
+}
+
+if(offset === 0){
+slide.classList.add("active");
+}
+
+if(offset === -1){
+slide.classList.add("left1");
+}
+
+if(offset === -2){
+slide.classList.add("left2");
+}
+
+if(offset === 1){
+slide.classList.add("right1");
+}
+
+if(offset === 2){
+slide.classList.add("right2");
+}
+
+});
+
+document.querySelectorAll(".welcome-dot").forEach((dot,index)=>{
+
+dot.classList.toggle("active",index === welcomeIndex);
+
+});
+
+}
+
+function nextWelcomeSlide(){
+
+welcomeIndex++;
+
+if(welcomeIndex >= welcomeSlides.length){
+welcomeIndex = 0;
+}
+
+updateWelcomeSlider();
+
+}
+
+function closeWelcomeSlider(){
+
+document.getElementById("welcomeSlider").style.display = "none";
+
+}
+
+updateWelcomeSlider();
+
+setInterval(nextWelcomeSlide,2500);
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("welcomeSlider").style.display = "flex";
+
+},500);
+
+});
+let touchStartX = 0;
+let touchEndX = 0;
+
+const welcomeTrack = document.getElementById("welcomeTrack");
+
+welcomeTrack.addEventListener("touchstart",function(e){
+touchStartX = e.changedTouches[0].screenX;
+});
+
+welcomeTrack.addEventListener("touchend",function(e){
+touchEndX = e.changedTouches[0].screenX;
+
+if(touchStartX - touchEndX > 50){
+nextWelcomeSlide();
+}
+
+if(touchEndX - touchStartX > 50){
+welcomeIndex--;
+
+if(welcomeIndex < 0){
+welcomeIndex = welcomeSlides.length - 1;
+}
+
+updateWelcomeSlider();
+}
+
+});
 
 </script>
 
