@@ -444,33 +444,36 @@ perspective:1500px;
 }
 
 .welcome-close{
-position:absolute;
-top:15px;
-right:15px;
+position:fixed;
+top:18px;
+right:18px;
 width:52px;
 height:52px;
 border:none;
 border-radius:50%;
 background:#7b1113;
 color:#fff;
-font-size:30px;
+font-size:32px;
 font-weight:900;
 cursor:pointer;
-z-index:1000;
-box-shadow:0 10px 25px rgba(0,0,0,.35);
+z-index:1000001;
+box-shadow:0 12px 30px rgba(0,0,0,.45);
 display:flex;
 align-items:center;
 justify-content:center;
+line-height:1;
 }
 
 @media(max-width:768px){
 
 .welcome-close{
-top:12px;
-right:12px;
+position:fixed;
+top:14px;
+right:14px;
 width:46px;
 height:46px;
-font-size:25px;
+font-size:26px;
+z-index:1000001;
 }
 
 }
@@ -480,13 +483,14 @@ padding-top:70px;
 
 .welcome-slider-track{
 position:relative;
-height:620px;
+height:calc(100vh - 180px);
+min-height:360px;
+max-height:620px;
 display:flex;
 align-items:center;
 justify-content:center;
 overflow:visible;
 }
-
 .welcome-slide{
 position:absolute;
 width:260px;
